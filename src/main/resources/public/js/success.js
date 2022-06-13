@@ -1,7 +1,7 @@
 function callRegister() {
 	
 	var track = "?trackId=" + getCookie1("sessionUUid")+"&userId="+getCookie1("userId");
-	window.location.href = "http://152.70.192.169:8129/user/openregister"+track;
+	window.location.href = "http://152.70.192.169:8029/user/openregister"+track;
 
 }
 
