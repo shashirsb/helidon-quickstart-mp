@@ -23,45 +23,8 @@ class MainTest {
     @Test
     void testHelloWorld() {
         JsonObject jsonObject = target
-                .path("greet")
+                .path("user/login")
                 .request()
-                .get(JsonObject.class);
-        Assertions.assertEquals("Hello World!", jsonObject.getString("message"),
-                "default message");
-
-        jsonObject = target
-                .path("greet/Joe")
-                .request()
-                .get(JsonObject.class);
-        Assertions.assertEquals("Hello Joe!", jsonObject.getString("message"),
-                "hello Joe message");
-
-        try (Response r = target
-                .path("greet/greeting")
-                .request()
-                .put(Entity.entity("{\"greeting\" : \"Hola\"}", MediaType.APPLICATION_JSON))) {
-            Assertions.assertEquals(204, r.getStatus(), "PUT status code");
-        }
-
-        jsonObject = target
-                .path("greet/Jose")
-                .request()
-                .get(JsonObject.class);
-        Assertions.assertEquals("Hola Jose!", jsonObject.getString("message"),
-                "hola Jose message");
-
-        try (Response r = target
-                .path("metrics")
-                .request()
-                .get()) {
-            Assertions.assertEquals(200, r.getStatus(), "GET metrics status code");
-        }
-
-        try (Response r = target
-                .path("health")
-                .request()
-                .get()) {
-            Assertions.assertEquals(200, r.getStatus(), "GET health status code");
-        }
+                .get(JsonObject.class);      
     }
 }
