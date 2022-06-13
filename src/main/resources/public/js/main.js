@@ -42,7 +42,7 @@
 	console.log("at login"+combined);
 		var request;
 		request = $.ajax({
-			url: 'http://localhost:8179/user/login' + combined,
+			url: 'http://localhost:8080/user/login' + combined,
 			type: 'GET',
 			dataType: 'json',
 			async: false,
@@ -64,7 +64,7 @@
 			error: function(data) {
 				console.log("login failed" + data);
 				alert("Login Failed - Please Try Again !");
-				window.location.href = "http://localhost:8179/login.html";
+				window.location.href = "http://localhost:8080/login.html";
 			}
 
 		});
@@ -76,12 +76,12 @@
 		
 			setTimeout(function() {
 				console.log("After Delay");
-				window.location.href = "http://localhost:8179/success.html";
+				window.location.href = "http://localhost:8080/success.html";
 			}, delayInMilliseconds);
 			} else {
 				
 				alert("Login Failed - Please Try Again !");
-				window.location.href = "http://localhost:8179/login.html";
+				window.location.href = "http://localhost:8080/login.html";
 			}
 			
 		});

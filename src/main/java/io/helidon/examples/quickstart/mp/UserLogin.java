@@ -160,9 +160,9 @@ public class UserLogin {
 			}
 			LOGGER.info("Time Stamp       =======>  " + ts + "   and Login status ===========>" + loginStatus);
 			if (calculateTimeDiff(ts) > 20) {
-				ui = new URI("http://localhost:8179/timeout.html");
+				ui = new URI("http://localhost:8080/timeout.html");
 			} else {
-				ui = new URI("http://localhost:8179/success.html");
+				ui = new URI("http://localhost:8080/success.html");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
