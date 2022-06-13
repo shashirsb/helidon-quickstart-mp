@@ -42,7 +42,7 @@
 	console.log("at login"+combined);
 		var request;
 		request = $.ajax({
-			url: 'http://143.47.107.210:8080/user/login' + combined,
+			url: 'http://152.70.192.169:8080/user/login' + combined,
 			type: 'GET',
 			dataType: 'json',
 			async: false,
@@ -64,7 +64,7 @@
 			error: function(data) {
 				console.log("login failed" + data);
 				alert("Login Failed - Please Try Again !");
-				window.location.href = "http://143.47.107.210:8080/login.html";
+				window.location.href = "http://152.70.192.169:8080/login.html";
 			}
 
 		});
@@ -76,12 +76,12 @@
 		
 			setTimeout(function() {
 				console.log("After Delay");
-				window.location.href = "http://143.47.107.210:8080/success.html";
+				window.location.href = "http://152.70.192.169:8080/success.html";
 			}, delayInMilliseconds);
 			} else {
 				
 				alert("Login Failed - Please Try Again !");
-				window.location.href = "http://143.47.107.210:8080/login.html";
+				window.location.href = "http://152.70.192.169:8080/login.html";
 			}
 			
 		});
