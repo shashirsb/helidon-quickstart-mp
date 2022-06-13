@@ -7,7 +7,7 @@ Sample Helidon MP project that includes multiple REST operations.
 With JDK11+
 ```bash
 mvn package
-java -jar target/helidon-quickstart-mp.jar
+java -jar target/helidon-quickstart-mp-8080.jar
 ```
 
 ## Exercise the application
@@ -47,13 +47,13 @@ curl -H 'Accept: application/json' -X GET http://localhost:8080/metrics
 ## Build the Docker Image
 
 ```
-docker build -t helidon-quickstart-mp .
+docker build -t helidon-quickstart-mp-8080 .
 ```
 
 ## Start the application with Docker
 
 ```
-docker run --rm -p 8080:8080 helidon-quickstart-mp:latest
+docker run --rm -p 8080:8080 helidon-quickstart-mp-8080:latest
 ```
 
 Exercise the application as described above
@@ -65,7 +65,7 @@ kubectl cluster-info                         # Verify which cluster
 kubectl get pods                             # Verify connectivity to cluster
 kubectl create -f app.yaml                   # Deploy application
 kubectl get pods                             # Wait for quickstart pod to be RUNNING
-kubectl get service helidon-quickstart-mp    # Verify deployed service
+kubectl get service helidon-quickstart-mp-8080    # Verify deployed service
 ```
 
 Note the PORTs. You can now exercise the application as you did before but use the second
@@ -108,7 +108,7 @@ See https://github.com/oracle/helidon-build-tools/tree/master/helidon-maven-plug
 Start the application:
 
 ```
-./target/helidon-quickstart-mp
+./target/helidon-quickstart-mp-8080
 ```
 
 ### Multi-stage Docker build
@@ -116,13 +116,13 @@ Start the application:
 Build the "native" Docker Image
 
 ```
-docker build -t helidon-quickstart-mp-native -f Dockerfile.native .
+docker build -t helidon-quickstart-mp-8080-native -f Dockerfile.native .
 ```
 
 Start the application:
 
 ```
-docker run --rm -p 8080:8080 helidon-quickstart-mp-native:latest
+docker run --rm -p 8080:8080 helidon-quickstart-mp-8080-native:latest
 ```
 
 
@@ -152,7 +152,7 @@ See https://github.com/oracle/helidon-build-tools/tree/master/helidon-maven-plug
 Start the application:
 
 ```
-./target/helidon-quickstart-mp-jri/bin/start
+./target/helidon-quickstart-mp-8080-jri/bin/start
 ```
 
 ### Multi-stage Docker build
@@ -160,17 +160,17 @@ Start the application:
 Build the JRI as a Docker Image
 
 ```
-docker build -t helidon-quickstart-mp-jri -f Dockerfile.jlink .
+docker build -t helidon-quickstart-mp-8080-jri -f Dockerfile.jlink .
 ```
 
 Start the application:
 
 ```
-docker run --rm -p 8080:8080 helidon-quickstart-mp-jri:latest
+docker run --rm -p 8080:8080 helidon-quickstart-mp-8080-jri:latest
 ```
 
 See the start script help:
 
 ```
-docker run --rm helidon-quickstart-mp-jri:latest --help
+docker run --rm helidon-quickstart-mp-8080-jri:latest --help
 ```

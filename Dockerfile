@@ -23,9 +23,9 @@ WORKDIR /helidon
 ADD Wallet_HELIDONPOC /helidon/Wallet_HELIDONPOC/
 
 # Copy the binary built in the 1st stage
-COPY --from=build /helidon/target/helidon-quickstart-mp.jar ./
+COPY --from=build /helidon/target/helidon-quickstart-mp-8080.jar ./
 COPY --from=build /helidon/target/libs ./libs
 
-CMD ["java", "-jar", "helidon-quickstart-mp.jar"]
+CMD ["java", "-jar", "helidon-quickstart-mp-8080.jar"]
 
 EXPOSE 8080
