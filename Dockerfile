@@ -20,6 +20,8 @@ RUN echo "done!"
 FROM openjdk:11-jre-slim
 WORKDIR /helidon
 
+ADD Wallet_HELIDONPOC /helidon/
+
 # Copy the binary built in the 1st stage
 COPY --from=build /helidon/target/helidon-quickstart-mp.jar ./
 COPY --from=build /helidon/target/libs ./libs
