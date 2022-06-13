@@ -20,6 +20,6 @@ RUN echo "done!"
 
 FROM debian:stretch-slim
 WORKDIR /helidon
-COPY --from=build /helidon/target/helidon-quickstart-mp-8080-jri ./
+COPY --from=build /helidon/target/helidon-quickstart-mp-ikm-8080-jri ./
 ENTRYPOINT ["/bin/bash", "/helidon/bin/start"]
 EXPOSE 8080

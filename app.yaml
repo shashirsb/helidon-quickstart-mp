@@ -17,13 +17,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: helidon-quickstart-mp-8080
+  name: helidon-quickstart-mp-ikm-8080
   labels:
-    app: helidon-quickstart-mp-8080
+    app: helidon-quickstart-mp-ikm-8080
 spec:
   type: NodePort
   selector:
-    app: helidon-quickstart-mp-8080
+    app: helidon-quickstart-mp-ikm-8080
   ports:
   - port: 8080
     targetPort: 8080
@@ -32,21 +32,21 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: helidon-quickstart-mp-8080
+  name: helidon-quickstart-mp-ikm-8080
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: helidon-quickstart-mp-8080
+      app: helidon-quickstart-mp-ikm-8080
   template:
     metadata:
       labels:
-        app: helidon-quickstart-mp-8080
+        app: helidon-quickstart-mp-ikm-8080
         version: v1
     spec:
       containers:
-      - name: helidon-quickstart-mp-8080
-        image: helidon-quickstart-mp-8080
+      - name: helidon-quickstart-mp-ikm-8080
+        image: helidon-quickstart-mp-ikm-8080
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
