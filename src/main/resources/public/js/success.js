@@ -1,7 +1,7 @@
 function callRegister() {
 	
 	var track = "?trackId=" + getCookie1("sessionUUid")+"&userId="+getCookie1("userId");
-	window.location.href = "http://129.159.104.70:8080/user/openregister"+track;
+	window.location.href = "http://150.136.116.225:30998/user/openregister"+track;
 
 }
 
@@ -12,11 +12,11 @@ function checkCokkies(){
 		console.log(getCookie1("sessionUUid"));
 		console.log(getCookie1("userId"));
 		//var track = "?trackId=" + getCookie1("sessionUUid")+"&userId="+getCookie1("userId");
-		//window.location.href = "http://152.70.192.169:8080/user/validateCookie"+track;
+		//window.location.href = "http://150.136.116.225:30996/user/validateCookie"+track;
 		
 	} else {
 		alert("Invalid Session - Kindly Login");
-		window.location.href = "http://152.70.192.169:8080/login.html";
+		window.location.href = "http://150.136.116.225:30996/login.html";
 		
 	}
 	return false;

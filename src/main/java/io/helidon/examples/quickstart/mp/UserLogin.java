@@ -131,7 +131,7 @@ public class UserLogin {
 	@Path("/validateCookie")
 	@GET
 	@Produces(MediaType.TEXT_HTML)
-	@CrossOrigin(value = { "http://129.159.104.70:8080/", "http://141.148.33.87:8080/" }, allowMethods = { HttpMethod.POST,
+	@CrossOrigin(value = { "http://150.136.116.225:30998/", "http://150.136.116.225:30994/" }, allowMethods = { HttpMethod.POST,
 			HttpMethod.GET })
 	public Response validateCookie(@QueryParam("trackId") String trackId, @QueryParam("userId") String userId)
 			throws URISyntaxException, SQLException {
@@ -160,9 +160,9 @@ public class UserLogin {
 			}
 			LOGGER.info("Time Stamp       =======>  " + ts + "   and Login status ===========>" + loginStatus);
 			if (calculateTimeDiff(ts) > 20) {
-				ui = new URI("http://152.70.192.169:8080/timeout.html");
+				ui = new URI("http://150.136.116.225:30996/timeout.html");
 			} else {
-				ui = new URI("http://152.70.192.169:8080/success.html");
+				ui = new URI("http://150.136.116.225:30996/success.html");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
