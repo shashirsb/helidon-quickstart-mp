@@ -131,7 +131,7 @@ public class UserLogin {
 	@Path("/validateCookie")
 	@GET
 	@Produces(MediaType.TEXT_HTML)
-	@CrossOrigin(value = { "http://129.159.104.70:8080/", "http://152.70.192.169:8083/" }, allowMethods = { HttpMethod.POST,
+	@CrossOrigin(value = { "http://129.159.104.70:8080/", "http://141.148.33.87:8080/" }, allowMethods = { HttpMethod.POST,
 			HttpMethod.GET })
 	public Response validateCookie(@QueryParam("trackId") String trackId, @QueryParam("userId") String userId)
 			throws URISyntaxException, SQLException {
